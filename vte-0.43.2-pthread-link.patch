@@ -1,0 +1,11 @@
+--- vte-0.43.2/src/Makefile.am.orig	2016-02-14 18:56:34.627001325 -0500
++++ vte-0.43.2/src/Makefile.am	2016-02-14 18:56:49.707082367 -0500
+@@ -127,7 +127,7 @@
+ 	$(AM_LDFLAGS)
+ 
+ libvte_@VTE_API_MAJOR_VERSION@_@VTE_API_MINOR_VERSION@_la_LIBADD = \
+-	$(VTE_LIBS)
++	$(VTE_LIBS) -lpthread
+ 
+ # Generated sources
+ 
