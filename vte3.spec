@@ -16,6 +16,7 @@ Group:		System/Libraries
 URL:		http://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
 BuildRequires:	pkgconfig(cairo-xlib)
+BuildRequires:  pkgconfig(fribidi)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.26.0
@@ -80,7 +81,7 @@ emulator library.
 %autopatch -p1
 
 %build
-%meson
+%meson  --buildtype=plain -Ddocs=true
 %meson_build
 
 %install
@@ -105,8 +106,10 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/girepository-1.0/Vte-%{api3}.typelib
 
 %files -n %{develname3}
+%doc %{_datadir}/gtk-doc/html/vte-%{api3}
 %{_includedir}/vte-%{api3}
 %{_libdir}/libvte-%{api3}.so
 %{_libdir}/pkgconfig/vte-%{api3}.pc
 %{_datadir}/gir-1.0/Vte-%{api3}.gir
 %{_datadir}/vala/vapi/vte-%{api3}.vapi
+%{_datadir}/vala/vapi/vte-2.91.deps
