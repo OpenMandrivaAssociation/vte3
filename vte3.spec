@@ -15,7 +15,6 @@ License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
-Patch0:		vte-0.43.2-pthread-link.patch
 BuildRequires:	pkgconfig(cairo-xlib)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gio-unix-2.0)
