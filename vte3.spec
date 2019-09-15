@@ -8,7 +8,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.56.3
+Version:	0.58.0
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
@@ -33,6 +33,7 @@ BuildRequires:	gobject-introspection-devel
 BuildRequires:	intltool
 BuildRequires:	vala-devel
 BuildRequires:	gperf
+BuildRequires:	meson
 Requires:	%{name}-profile
 
 %description
@@ -80,17 +81,11 @@ emulator library.
 %autopatch -p1
 
 %build
-autoreconf -fi
-%configure2_5x \
-	--enable-shared \
-	--disable-static \
-	--libexecdir=%{_libexecdir}/%{name} \
-	--enable-gtk-doc \
-	--enable-introspection
-%make_build
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 #we don't want these
 find %{buildroot} -name "*.la" -delete
