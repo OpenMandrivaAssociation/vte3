@@ -105,7 +105,6 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/girepository-1.0/Vte-%{api3}.typelib
 
 %files -n %{develname3}
-%doc %{_datadir}/gtk-doc/html/vte-%{api3}
 %{_includedir}/vte-%{api3}
 %{_libdir}/libvte-%{api3}.so
 %{_libdir}/pkgconfig/vte-%{api3}.pc
