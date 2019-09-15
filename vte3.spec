@@ -8,14 +8,13 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.56.3
+Version:	0.58.0
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
-Patch0:		vte-0.43.2-pthread-link.patch
 BuildRequires:	pkgconfig(cairo-xlib)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gio-unix-2.0)
@@ -33,6 +32,7 @@ BuildRequires:	gobject-introspection-devel
 BuildRequires:	intltool
 BuildRequires:	vala-devel
 BuildRequires:	gperf
+BuildRequires:	meson
 Requires:	%{name}-profile
 
 %description
@@ -80,17 +80,11 @@ emulator library.
 %autopatch -p1
 
 %build
-autoreconf -fi
-%configure2_5x \
-	--enable-shared \
-	--disable-static \
-	--libexecdir=%{_libexecdir}/%{name} \
-	--enable-gtk-doc \
-	--enable-introspection
-%make_build
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 #we don't want these
 find %{buildroot} -name "*.la" -delete
@@ -111,7 +105,6 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/girepository-1.0/Vte-%{api3}.typelib
 
 %files -n %{develname3}
-%doc %{_datadir}/gtk-doc/html/vte-%{api3}
 %{_includedir}/vte-%{api3}
 %{_libdir}/libvte-%{api3}.so
 %{_libdir}/pkgconfig/vte-%{api3}.pc
