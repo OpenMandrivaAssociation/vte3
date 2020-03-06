@@ -8,13 +8,14 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.58.3
+Version:	0.60.0
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
+
 BuildRequires:	pkgconfig(cairo-xlib)
 BuildRequires:  pkgconfig(fribidi)
 BuildRequires:	pkgconfig(gio-2.0)
@@ -27,7 +28,9 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libpcre2-8)
+BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:	automake
+BuildRequires:  cmake
 BuildRequires:	gtk-doc
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	intltool
@@ -94,9 +97,12 @@ find %{buildroot} -name "*.la" -delete
 %files -f vte-%{api3}.lang
 %doc NEWS
 %{_bindir}/vte-%{api3}
+%{_libexecdir}/vte-urlencode-cwd
+%{_userunitdir}/vte-spawn-.scope.d/defaults.conf
 
 %files profile
 %{_sysconfdir}/profile.d/vte.sh
+%{_sysconfdir}/profile.d/vte.csh
 
 %files -n %{lib3_name}
 %{_libdir}/libvte-%{api3}.so.%{lib3_major}.*
