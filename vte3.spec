@@ -15,6 +15,7 @@ License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
+
 BuildRequires:	pkgconfig(cairo-xlib)
 BuildRequires:  pkgconfig(fribidi)
 BuildRequires:	pkgconfig(gio-2.0)
@@ -27,7 +28,9 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libpcre2-8)
+BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:	automake
+BuildRequires:  cmake
 BuildRequires:	gtk-doc
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	intltool
