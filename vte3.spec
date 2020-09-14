@@ -95,7 +95,6 @@ find %{buildroot} -name "*.la" -delete
 %find_lang vte-%{api3}
 
 %files -f vte-%{api3}.lang
-%doc NEWS
 %{_bindir}/vte-%{api3}
 %{_libexecdir}/vte-urlencode-cwd
 %{_userunitdir}/vte-spawn-.scope.d/defaults.conf
