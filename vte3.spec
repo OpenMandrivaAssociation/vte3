@@ -8,7 +8,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.62.3
+Version:	0.63.91
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
@@ -98,6 +98,8 @@ find %{buildroot} -name "*.la" -delete
 %{_bindir}/vte-%{api3}
 %{_libexecdir}/vte-urlencode-cwd
 %{_userunitdir}/vte-spawn-.scope.d/defaults.conf
+%{_datadir}/glade/catalogs/vte-%{api3}.xml
+%{_datadir}/glade/pixmaps/hicolor/*x*/actions/widget-vte-terminal.png
 
 %files profile
 %{_sysconfdir}/profile.d/vte.sh
