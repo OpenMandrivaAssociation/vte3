@@ -98,6 +98,8 @@ find %{buildroot} -name "*.la" -delete
 %{_bindir}/vte-%{api3}
 %{_libexecdir}/vte-urlencode-cwd
 %{_userunitdir}/vte-spawn-.scope.d/defaults.conf
+%{_datadir}/glade/catalogs/%{name}*
+%{_datadir}/glade/pixmaps/hicolor/*/*/*-%{name}*.*
 
 %files profile
 %{_sysconfdir}/profile.d/vte.sh
