@@ -87,8 +87,8 @@ emulator library.
 %build
 %meson  \
           --buildtype=release \
-          -Ddocs=true \
-          -Dgtk4=true
+          -Ddocs=true
+#          -Dgtk4=true
 %meson_build
 
 %install
