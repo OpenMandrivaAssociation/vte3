@@ -23,6 +23,7 @@ BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.26.0
 BuildRequires:	pkgconfig(gobject-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.9
+BuildRequires:  pkgconfig(gtk4)
 BuildRequires:	pkgconfig(pango) >= 1.22.0
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ncurses)
@@ -84,7 +85,10 @@ emulator library.
 %autopatch -p1
 
 %build
-%meson  --buildtype=plain -Ddocs=true
+%meson  \
+          --buildtype=release \
+          -Ddocs=true \
+          -Dgtk4=true
 %meson_build
 
 %install
@@ -113,7 +117,7 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/girepository-1.0/Vte-%{api3}.typelib
 
 %files -n %{develname3}
-%doc %{_datadir}/gtk-doc/html/vte-%{api3}
+#doc #{_datadir}/gtk-doc/html/vte-%{api3}
 %{_includedir}/vte-%{api3}
 %{_libdir}/libvte-%{api3}.so
 %{_libdir}/pkgconfig/vte-%{api3}.pc
