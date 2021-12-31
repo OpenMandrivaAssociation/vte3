@@ -9,7 +9,7 @@
 
 Name:		vte3
 Version:	0.66.2
-Release:	1
+Release:	2
 Summary:	A terminal emulator widget
 License:	LGPLv2+
 Group:		System/Libraries
