@@ -8,8 +8,8 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.66.2
-Release:	2
+Version:	0.68.0
+Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
 Group:		System/Libraries
@@ -85,9 +85,15 @@ emulator library.
 %autopatch -p1
 
 %build
+export CXXFLAGS="%{optflags} -std=c++20"
+# Build 0.68.0 failing with clang 14. ld.lld: error: undefined symbol: void std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, 
+# std::allocator<char32_t> >::_M_construct<char32_t const*>(char32_t const*, char32_t const*, std::forward_iterator_tag)
+export CC=gcc
+export CXX=g++
 %meson  \
           --buildtype=release \
-          -Ddocs=true
+          -Ddocs=true \
+          -Dgtk3=true
 #          -Dgtk4=true
 %meson_build
 
