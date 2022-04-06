@@ -93,8 +93,8 @@ export CXX=g++
 %meson  \
           --buildtype=release \
           -Ddocs=true \
-          -Dgtk3=true \
-          -Dgtk4=true
+          -Dgtk3=true
+#          -Dgtk4=true
 %meson_build
 
 %install
