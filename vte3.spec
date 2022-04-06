@@ -86,6 +86,8 @@ emulator library.
 
 %build
 export CXXFLAGS="%{optflags} -std=c++20"
+export CC=gcc
+export CXX=g++
 %meson  \
           --buildtype=release \
           -Ddocs=true
