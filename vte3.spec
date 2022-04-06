@@ -85,6 +85,7 @@ emulator library.
 %autopatch -p1
 
 %build
+export CXXFLAGS="%{optflags} -std=c++20"
 %meson  \
           --buildtype=release \
           -Ddocs=true
