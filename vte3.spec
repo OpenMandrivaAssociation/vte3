@@ -179,6 +179,5 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/libvte-%{api3}-gtk4.so
 %{_libdir}/pkgconfig/vte-%{api3}-gtk4.pc
 %{_datadir}/gir-1.0/Vte-%{apigtk4}.gir
-%doc %{_docdir}/vte-%{api}-gtk4/
 %{_datadir}/vala/vapi/vte-%{api3}-gtk4.deps
 %{_datadir}/vala/vapi/vte-%{api3}-gtk4.vapi
