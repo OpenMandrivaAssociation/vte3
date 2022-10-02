@@ -16,29 +16,29 @@ Group:		System/Libraries
 URL:		http://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
 
-BuildRequires:      pkgconfig(gi-docgen)
-BuildRequires:	pkgconfig(cairo-xlib)
-BuildRequires:      pkgconfig(fribidi)
-BuildRequires:	pkgconfig(gio-2.0)
-BuildRequires:	pkgconfig(gio-unix-2.0)
-BuildRequires:	pkgconfig(glib-2.0) >= 2.26.0
-BuildRequires:	pkgconfig(gobject-2.0)
-BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.9
-BuildRequires:      pkgconfig(gtk4)
-BuildRequires:	pkgconfig(pango) >= 1.22.0
-BuildRequires:	pkgconfig(x11)
-BuildRequires:	pkgconfig(ncurses)
-BuildRequires:	pkgconfig(gnutls)
-BuildRequires:	pkgconfig(libpcre2-8)
-BuildRequires:      pkgconfig(libsystemd)
-BuildRequires:	automake
-BuildRequires:      cmake
-BuildRequires:	gtk-doc
-BuildRequires:	gobject-introspection-devel
-BuildRequires:	intltool
-BuildRequires:	vala-devel
-BuildRequires:	gperf
-BuildRequires:	meson
+BuildRequires: pkgconfig(gi-docgen)
+BuildRequires: pkgconfig(cairo-xlib)
+BuildRequires: pkgconfig(fribidi)
+BuildRequires: pkgconfig(gio-2.0)
+BuildRequires: pkgconfig(gio-unix-2.0)
+BuildRequires: pkgconfig(glib-2.0) >= 2.26.0
+BuildRequires: pkgconfig(gobject-2.0)
+BuildRequires: pkgconfig(gtk+-3.0) >= 3.1.9
+BuildRequires: pkgconfig(gtk4)
+BuildRequires: pkgconfig(pango) >= 1.22.0
+BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(ncurses)
+BuildRequires: pkgconfig(gnutls)
+BuildRequires: pkgconfig(libpcre2-8)
+BuildRequires: pkgconfig(libsystemd)
+BuildRequires: automake
+BuildRequires: cmake
+BuildRequires: gtk-doc
+BuildRequires: gobject-introspection-devel
+BuildRequires: intltool
+BuildRequires: vala-devel
+BuildRequires: gperf
+BuildRequires: meson
 Requires:	%{name}-profile
 
 %description
@@ -124,7 +124,7 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/girepository-1.0/Vte-%{api3}.typelib
 
 %files -n %{develname3}
-%doc %{_datadir}/gtk-doc/html/vte-gtk3-%{api3}
+#doc %{_datadir}/gtk-doc/html/vte-gtk3-%{api3}
 %{_includedir}/vte-%{api3}
 %{_libdir}/libvte-%{api3}.so
 %{_libdir}/pkgconfig/vte-%{api3}.pc
