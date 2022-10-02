@@ -8,7 +8,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.68.0
+Version:	0.70.0
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
@@ -17,21 +17,21 @@ URL:		http://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
 
 BuildRequires:	pkgconfig(cairo-xlib)
-BuildRequires:  pkgconfig(fribidi)
+BuildRequires:      pkgconfig(fribidi)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.26.0
 BuildRequires:	pkgconfig(gobject-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.9
-BuildRequires:  pkgconfig(gtk4)
+BuildRequires:      pkgconfig(gtk4)
 BuildRequires:	pkgconfig(pango) >= 1.22.0
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libpcre2-8)
-BuildRequires:  pkgconfig(libsystemd)
+BuildRequires:      pkgconfig(libsystemd)
 BuildRequires:	automake
-BuildRequires:  cmake
+BuildRequires:      cmake
 BuildRequires:	gtk-doc
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	intltool
@@ -93,8 +93,8 @@ export CXX=g++
 %meson  \
           --buildtype=release \
           -Ddocs=true \
-          -Dgtk3=true
-#          -Dgtk4=true
+          -Dgtk3=true \
+          -Dgtk4=true
 %meson_build
 
 %install
