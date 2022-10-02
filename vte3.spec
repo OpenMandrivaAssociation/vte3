@@ -16,6 +16,7 @@ Group:		System/Libraries
 URL:		http://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
 
+BuildRequires:      pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(cairo-xlib)
 BuildRequires:      pkgconfig(fribidi)
 BuildRequires:	pkgconfig(gio-2.0)
