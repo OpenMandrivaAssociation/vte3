@@ -1,9 +1,14 @@
 %define api3		2.91
+%define apigtk4               3.91
 
 %define lib3_major	0
 %define lib3_name	%mklibname vte %{api3} %{lib3_major}
 %define gir3name	%mklibname vte-gir %{api3}
 %define develname3	%mklibname -d %{name}
+#--------------
+%define libgtk4name     %mklibname vte-gtk4_ %{api} %{major}
+%define girgtk4name     %mklibname vte-gir %{apigtk4}
+%define develgtk4name   %mklibname -d %{name}-gtk4
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
@@ -81,6 +86,35 @@ Conflicts:	%{name} < 0.37.90-2
 This package package contains a profile.d script for the VTE terminal
 emulator library.
 
+#--------------------
+%package -n %{libgtk4name}
+Summary:        GTK4 terminal emulator library
+Group:          System/Libraries
+Requires:       %{name} >= %{version}-%{release}
+ 
+%description -n %{libgtk4name}
+VTE is a library implementing a terminal emulator widget for GTK 4. VTE
+is mainly used in gnome-terminal, but can also be used to embed a console/terminal in games, editors, IDEs, etc.
+
+%package -n %{develgtk4name}
+Summary:        Files needed for developing applications which use VTE for GTK+ 4
+Group:          Development/C
+Requires:       %{libgtk4name} = %{version}-%{release}
+Requires:       %{girgtk4name} = %{version}-%{release}
+
+%description -n %{develgtk4name}
+VTE is a terminal emulator widget for use with GTK+ 4.0.  This
+package contains the files needed for building applications using VTE.
+
+%package -n %{girgtk4name}
+Summary:        GObject Introspection interface description for vte with GTK+ 4.0
+Group:          System/Libraries
+Requires:       %{libgtk4name} = %{version}-%{release}
+
+%description -n %{girgtk4name}
+GObject Introspection interface description for vte with GTK+ 4.0.
+
+
 %prep
 %setup -qn vte-%{version}
 %autopatch -p1
@@ -107,6 +141,7 @@ find %{buildroot} -name "*.la" -delete
 
 %files -f vte-%{api3}.lang
 %{_bindir}/vte-%{api3}
+%{_bindir}/vte-%{api3}-gtk4
 %{_libexecdir}/vte-urlencode-cwd
 %{_userunitdir}/vte-spawn-.scope.d/defaults.conf
 %{_datadir}/glade/catalogs/vte-%{api3}.xml
@@ -124,10 +159,26 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/girepository-1.0/Vte-%{api3}.typelib
 
 %files -n %{develname3}
-#doc %{_datadir}/gtk-doc/html/vte-gtk3-%{api3}
+%doc %{_datadir}/doc/vte-*
 %{_includedir}/vte-%{api3}
 %{_libdir}/libvte-%{api3}.so
 %{_libdir}/pkgconfig/vte-%{api3}.pc
 %{_datadir}/gir-1.0/Vte-%{api3}.gir
 %{_datadir}/vala/vapi/vte-%{api3}.vapi
 %{_datadir}/vala/vapi/vte-2.91.deps
+
+#-----------------
+%files -n %{libgtk4name}
+%{_libdir}/libvte-%{api}-gtk4.so.%{major}{,.*}
+
+%files -n %{girgtk4name}
+%{_libdir}/girepository-1.0/Vte-%{apigtk4}.typelib
+
+%files -n %{develgtk4name}
+%{_includedir}/vte-%{api}-gtk4/
+%{_libdir}/libvte-%{api}-gtk4.so
+%{_libdir}/pkgconfig/vte-%{api}-gtk4.pc
+%{_datadir}/gir-1.0/Vte-%{apigtk4}.gir
+%doc %{_docdir}/vte-%{api}-gtk4/
+%{_datadir}/vala/vapi/vte-%{api}-gtk4.deps
+%{_datadir}/vala/vapi/vte-%{api}-gtk4.vapi
