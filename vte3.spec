@@ -169,7 +169,7 @@ find %{buildroot} -name "*.la" -delete
 
 #-----------------
 %files -n %{libgtk4name}
-%{_libdir}/libvte-%{api3}-gtk4.so.%{major}{,.*}
+#{_libdir}/libvte-%{api3}-gtk4.so.%{major}{,.*}
 
 %files -n %{girgtk4name}
 %{_libdir}/girepository-1.0/Vte-%{apigtk4}.typelib
