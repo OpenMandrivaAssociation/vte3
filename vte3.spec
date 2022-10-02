@@ -169,16 +169,16 @@ find %{buildroot} -name "*.la" -delete
 
 #-----------------
 %files -n %{libgtk4name}
-%{_libdir}/libvte-%{api}-gtk4.so.%{major}{,.*}
+%{_libdir}/libvte-%{api3}-gtk4.so.%{major}{,.*}
 
 %files -n %{girgtk4name}
 %{_libdir}/girepository-1.0/Vte-%{apigtk4}.typelib
 
 %files -n %{develgtk4name}
-%{_includedir}/vte-%{api}-gtk4/
-%{_libdir}/libvte-%{api}-gtk4.so
-%{_libdir}/pkgconfig/vte-%{api}-gtk4.pc
+%{_includedir}/vte-%{api3}-gtk4/
+%{_libdir}/libvte-%{api3}-gtk4.so
+%{_libdir}/pkgconfig/vte-%{api3}-gtk4.pc
 %{_datadir}/gir-1.0/Vte-%{apigtk4}.gir
 %doc %{_docdir}/vte-%{api}-gtk4/
-%{_datadir}/vala/vapi/vte-%{api}-gtk4.deps
-%{_datadir}/vala/vapi/vte-%{api}-gtk4.vapi
+%{_datadir}/vala/vapi/vte-%{api3}-gtk4.deps
+%{_datadir}/vala/vapi/vte-%{api3}-gtk4.vapi
