@@ -6,7 +6,7 @@
 %define gir3name	%mklibname vte-gir %{api3}
 %define develname3	%mklibname -d %{name}
 #--------------
-%define libgtk4name     %mklibname vte-gtk4_ %{api3} %{major}
+%define libgtk4name     %mklibname vte-gtk4_ %{api3} %{lib3_major}
 %define girgtk4name     %mklibname vte-gir %{apigtk4}
 %define develgtk4name   %mklibname -d %{name}-gtk4
 
@@ -169,7 +169,7 @@ find %{buildroot} -name "*.la" -delete
 
 #-----------------
 %files -n %{libgtk4name}
-%{_libdir}/libvte-%{api3}-gtk4.so.%{major}{,.*}
+%{_libdir}/libvte-%{api3}-gtk4.so.%{lib3_major}{,.*}
 
 %files -n %{girgtk4name}
 %{_libdir}/girepository-1.0/Vte-%{apigtk4}.typelib
