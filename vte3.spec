@@ -6,7 +6,7 @@
 %define gir3name	%mklibname vte-gir %{api3}
 %define develname3	%mklibname -d %{name}
 #--------------
-%define libgtk4name     %mklibname vte-gtk4_ %{api} %{major}
+%define libgtk4name     %mklibname vte-gtk4_ %{api3} %{major}
 %define girgtk4name     %mklibname vte-gir %{apigtk4}
 %define develgtk4name   %mklibname -d %{name}-gtk4
 
