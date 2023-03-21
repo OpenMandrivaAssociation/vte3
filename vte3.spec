@@ -13,7 +13,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.70.3
+Version:	0.72.0
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
