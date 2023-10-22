@@ -36,7 +36,7 @@ BuildRequires: pkgconfig(ncurses)
 BuildRequires: pkgconfig(gnutls)
 BuildRequires: pkgconfig(libpcre2-8)
 BuildRequires: pkgconfig(libsystemd)
-BuildRewuires: pkgconfig(icu-uc)
+BuildRequires: pkgconfig(icu-uc)
 BuildRequires: automake
 BuildRequires: cmake
 BuildRequires: gtk-doc
