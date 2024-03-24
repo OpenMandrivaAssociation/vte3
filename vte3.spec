@@ -29,7 +29,7 @@ BuildRequires: pkgconfig(gio-unix-2.0)
 BuildRequires: pkgconfig(glib-2.0) >= 2.26.0
 BuildRequires: pkgconfig(gobject-2.0)
 BuildRequires: pkgconfig(gtk+-3.0) >= 3.1.9
-BuildRequires: pkgconfig(gtk4)
+BuildRequires: pkgconfig(gtk4) >= 4.14.0
 BuildRequires: pkgconfig(pango) >= 1.22.0
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(ncurses)
