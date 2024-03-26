@@ -123,7 +123,7 @@ GObject Introspection interface description for vte with GTK+ 4.0.
 %autopatch -p1
 
 %build
-export CXXFLAGS="%{optflags} -std=c++20"
+#export CXXFLAGS="%{optflags} -std=c++20"
 # Build 0.68.0 failing with clang 14. ld.lld: error: undefined symbol: void std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, 
 # std::allocator<char32_t> >::_M_construct<char32_t const*>(char32_t const*, char32_t const*, std::forward_iterator_tag)
 export CC=gcc
