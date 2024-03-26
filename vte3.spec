@@ -20,6 +20,7 @@ License:	LGPLv2+
 Group:		System/Libraries
 URL:		https://www.gnome.org/
 Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
+Patch0:  vte-revert-back-to-c++17.patch
 
 BuildRequires: pkgconfig(gi-docgen)
 BuildRequires: pkgconfig(cairo-xlib)
