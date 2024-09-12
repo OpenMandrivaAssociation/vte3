@@ -13,13 +13,13 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.76.3
+Version:	0.77.92
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		https://www.gnome.org/
-Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.bz2
 
 BuildRequires: pkgconfig(gi-docgen)
 BuildRequires: pkgconfig(cairo-xlib)
@@ -122,10 +122,10 @@ GObject Introspection interface description for vte with GTK+ 4.0.
 
 %build
 #export CXXFLAGS="%{optflags} -std=c++20"
-# Build 0.68.0 failing with clang 14. ld.lld: error: undefined symbol: void std::__cxx11::basic_string<char32_t, std::char_traits<char32_t>, 
-# std::allocator<char32_t> >::_M_construct<char32_t const*>(char32_t const*, char32_t const*, std::forward_iterator_tag)
-#export CC=gcc
-#export CXX=g++
+# Build 0.77.0 failing with clang: ../src/color-test.cc:167:21: error: constexpr function never produces a constant expression [-Winvalid-constexpr]
+# DEBUG util.py:463:    167 |         auto test = [](std::string str,
+export CC=gcc
+export CXX=g++
 %meson  \
           --buildtype=release \
           -Ddocs=true \
