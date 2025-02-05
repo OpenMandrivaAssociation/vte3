@@ -1,3 +1,4 @@
+# Achtung, duckers! Do not remove dependencies without consulting with angry.
 %define api3		2.91
 %define apigtk4               3.91
 
@@ -13,7 +14,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.78.2
+Version:	0.78.3
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
@@ -48,6 +49,11 @@ BuildRequires: gperf
 BuildRequires: meson
 Requires:	%{name}-profile
 
+# Do not remove
+Requires: %{libgtk4name} = %{version}-%{release}
+Recommends: %{lib3_name} = %{version}-%{release}
+
+
 %description
 VTE is a terminal emulator widget for use with GTK+ 3.0.
 
@@ -55,6 +61,7 @@ VTE is a terminal emulator widget for use with GTK+ 3.0.
 Summary:	A terminal emulator widget
 Group:		System/Libraries
 Requires:	%{name} >= %{version}
+Requires: %{gir3name} = %{version}-%{release}
 
 %description -n %{lib3_name}
 VTE is a terminal emulator widget for use with GTK+ 3.0.
@@ -93,6 +100,7 @@ emulator library.
 Summary:        GTK4 terminal emulator library
 Group:          System/Libraries
 Requires:       %{name} >= %{version}-%{release}
+Requires:       %{girgtk4name} = %{version}-%{release}
  
 %description -n %{libgtk4name}
 VTE is a library implementing a terminal emulator widget for GTK 4. VTE
