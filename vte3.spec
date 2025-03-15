@@ -154,6 +154,10 @@ find %{buildroot} -name "*.la" -delete
 %{_bindir}/vte-%{api3}-gtk4
 %{_libexecdir}/vte-urlencode-cwd
 %{_userunitdir}/vte-spawn-.scope.d/defaults.conf
+%{_datadir}/applications/org.gnome.Vte.App.Gtk3.desktop
+%{_datadir}/applications/org.gnome.Vte.App.Gtk4.desktop
+%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk3.desktop
+%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk4.desktop
 %{_datadir}/glade/catalogs/vte-%{api3}.xml
 %{_datadir}/glade/pixmaps/hicolor/*x*/actions/widget-vte-terminal.png
 
