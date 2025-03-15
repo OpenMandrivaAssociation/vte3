@@ -14,8 +14,8 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.78.4
-Release:	3
+Version:	0.79.91
+Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
 Group:		System/Libraries
@@ -43,6 +43,7 @@ BuildRequires: automake
 BuildRequires: cmake
 BuildRequires: gtk-doc
 BuildRequires: gobject-introspection-devel
+BuildRequires: fast_float-devel
 BuildRequires: intltool
 BuildRequires: vala-devel
 BuildRequires: gperf
@@ -153,6 +154,10 @@ find %{buildroot} -name "*.la" -delete
 %{_bindir}/vte-%{api3}-gtk4
 %{_libexecdir}/vte-urlencode-cwd
 %{_userunitdir}/vte-spawn-.scope.d/defaults.conf
+%{_datadir}/applications/org.gnome.Vte.App.Gtk3.desktop
+%{_datadir}/applications/org.gnome.Vte.App.Gtk4.desktop
+%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk3.desktop
+%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk4.desktop
 %{_datadir}/glade/catalogs/vte-%{api3}.xml
 %{_datadir}/glade/pixmaps/hicolor/*x*/actions/widget-vte-terminal.png
 
