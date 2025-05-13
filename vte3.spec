@@ -15,7 +15,7 @@
 
 Name:		vte3
 Version:	0.80.1
-Release:	1
+Release:	2
 Summary:	A terminal emulator widget
 License:	LGPLv2+
 Group:		System/Libraries
@@ -144,6 +144,11 @@ export CXX=g++
 
 %install
 %meson_install
+
+rm -f %{buildroot}%{_datadir}/applications/org.gnome.Vte.App.Gtk3.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.gnome.Vte.App.Gtk4.desktop
+rm -f %{buildroot}%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk3.desktop
+rm -f %{buildroot}%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk4.desktop
 
 #we don't want these
 find %{buildroot} -name "*.la" -delete
