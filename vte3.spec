@@ -14,8 +14,8 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.80.0
-Release:	1
+Version:	0.80.1
+Release:	2
 Summary:	A terminal emulator widget
 License:	LGPLv2+
 Group:		System/Libraries
@@ -145,6 +145,11 @@ export CXX=g++
 %install
 %meson_install
 
+rm -f %{buildroot}%{_datadir}/applications/org.gnome.Vte.App.Gtk3.desktop
+rm -f %{buildroot}%{_datadir}/applications/org.gnome.Vte.App.Gtk4.desktop
+rm -f %{buildroot}%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk3.desktop
+rm -f %{buildroot}%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk4.desktop
+
 #we don't want these
 find %{buildroot} -name "*.la" -delete
 %find_lang vte-%{api3}
@@ -154,10 +159,6 @@ find %{buildroot} -name "*.la" -delete
 %{_bindir}/vte-%{api3}-gtk4
 %{_libexecdir}/vte-urlencode-cwd
 %{_userunitdir}/vte-spawn-.scope.d/defaults.conf
-%{_datadir}/applications/org.gnome.Vte.App.Gtk3.desktop
-%{_datadir}/applications/org.gnome.Vte.App.Gtk4.desktop
-%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk3.desktop
-%{_datadir}/xdg-terminals/org.gnome.Vte.App.Gtk4.desktop
 %{_datadir}/glade/catalogs/vte-%{api3}.xml
 %{_datadir}/glade/pixmaps/hicolor/*x*/actions/widget-vte-terminal.png
 
