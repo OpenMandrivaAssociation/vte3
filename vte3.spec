@@ -25,6 +25,7 @@ Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
 BuildRequires: pkgconfig(gi-docgen)
 BuildRequires: pkgconfig(cairo-xlib)
 BuildRequires: pkgconfig(fribidi)
+BuildRequires: pkgconfig(fmt)
 BuildRequires: pkgconfig(gio-2.0)
 BuildRequires: pkgconfig(gio-unix-2.0)
 BuildRequires: pkgconfig(glib-2.0) >= 2.26.0
