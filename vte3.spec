@@ -14,7 +14,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		vte3
-Version:	0.80.3
+Version:	0.81.90
 Release:	1
 Summary:	A terminal emulator widget
 License:	LGPLv2+
@@ -25,6 +25,7 @@ Source0:	https://download.gnome.org/sources/vte/%{url_ver}/vte-%{version}.tar.xz
 BuildRequires: pkgconfig(gi-docgen)
 BuildRequires: pkgconfig(cairo-xlib)
 BuildRequires: pkgconfig(fribidi)
+BuildRequires: pkgconfig(fmt)
 BuildRequires: pkgconfig(gio-2.0)
 BuildRequires: pkgconfig(gio-unix-2.0)
 BuildRequires: pkgconfig(glib-2.0) >= 2.26.0
