@@ -134,8 +134,8 @@ GObject Introspection interface description for vte with GTK+ 4.0.
 #export CXXFLAGS="%{optflags} -std=c++20"
 # Build 0.77.0 failing with clang: ../src/color-test.cc:167:21: error: constexpr function never produces a constant expression [-Winvalid-constexpr]
 # DEBUG util.py:463:    167 |         auto test = [](std::string str,
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %meson  \
           --buildtype=release \
           -Ddocs=true \
