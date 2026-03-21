@@ -40,6 +40,7 @@ BuildRequires: pkgconfig(libpcre2-8)
 BuildRequires: pkgconfig(libsystemd)
 BuildRequires: pkgconfig(liblz4)
 BuildRequires: pkgconfig(icu-uc)
+BuildRequires: pkgconfig(simdutf)
 BuildRequires: automake
 BuildRequires: cmake
 BuildRequires: gtk-doc
