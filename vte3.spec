@@ -46,6 +46,7 @@ BuildRequires: cmake
 BuildRequires: gtk-doc
 BuildRequires: gobject-introspection-devel
 BuildRequires: fast_float-devel
+BuildRequires: atomic-devel
 BuildRequires: intltool
 BuildRequires: vala-devel
 BuildRequires: gperf
